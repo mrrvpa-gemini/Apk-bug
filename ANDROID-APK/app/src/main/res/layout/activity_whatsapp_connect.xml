@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@drawable/bg_gradient" android:padding="16dp">
+    <TextView android:id="@+id/tvTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16dp"
+        android:fontFamily="sans-serif-black" android:text="Hubungkan WhatsApp" android:textColor="@color/neon_cyan" android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+    <com.google.android.material.card.MaterialCardView android:id="@+id/cardQR" style="@style/MantaXCard" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center" android:orientation="vertical" android:padding="24dp">
+            <ImageView android:id="@+id/ivQRCode" android:layout_width="250dp" android:layout_height="250dp" android:background="@color/bg_input" android:scaleType="fitCenter" />
+            <TextView android:id="@+id/tvQRStatus" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16dp"
+                android:text="Scan QR Code dengan WhatsApp" android:textColor="@color/text_secondary" android:textSize="14sp" />
+            <ProgressBar android:id="@+id/pbQRLoading" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp"
+                android:indeterminateTint="@color/colorPrimary" android:visibility="gone" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView android:id="@+id/cardManual" style="@style/MantaXCard" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/cardQR">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+            <com.google.android.material.textfield.TextInputLayout style="@style/MantaXInput" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="@string/enter_pairing_code">
+                <com.google.android.material.textfield.TextInputEditText android:id="@+id/etPairingCode" android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:inputType="text" android:maxLength="8" android:textColor="@color/text_primary" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.button.MaterialButton android:id="@+id/btnPair" style="@style/MantaXButton" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginTop="12dp" android:text="@string/btn_pair" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.button.MaterialButton android:id="@+id/btnRefreshQR" style="@style/MantaXButton.Outline" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_marginTop="16dp" android:text="@string/btn_refresh" app:layout_constraintTop_toBottomOf="@id/cardManual" />
+    <androidx.recyclerview.widget.RecyclerView android:id="@+id/rvAccounts" android:layout_width="match_parent" android:layout_height="0dp" android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toBottomOf="@id/btnRefreshQR" />
+</androidx.constraintlayout.widget.ConstraintLayout>

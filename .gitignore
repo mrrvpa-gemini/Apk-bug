@@ -1,0 +1,29 @@
+# Gradle
+.gradle/
+build/
+local.properties
+*.iml
+.idea/
+*.apk
+*.aab
+
+# Node
+node_modules/
+.env
+npm-debug.log*
+
+# Database
+*.db
+*.sqlite
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+
+# Sessions
+sessions/
+bailey-sessions/

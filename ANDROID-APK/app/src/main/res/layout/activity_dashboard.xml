@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/bg_dark">
+    <com.google.android.material.appbar.AppBarLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@color/bg_dark" android:elevation="0dp">
+        <com.google.android.material.card.MaterialCardView style="@style/MantaXCard" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="16dp" app:cardBackgroundColor="@color/bg_card">
+            <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp">
+                <ImageView android:id="@+id/ivProfile" android:layout_width="48dp" android:layout_height="48dp" android:src="@drawable/ic_person" android:tint="@color/colorPrimary"
+                    app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+                <TextView android:id="@+id/tvWelcome" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginStart="12dp"
+                    android:text="@string/welcome_back" android:textColor="@color/text_secondary" android:textSize="12sp"
+                    app:layout_constraintEnd_toStartOf="@id/btnLogout" app:layout_constraintStart_toEndOf="@id/ivProfile" app:layout_constraintTop_toTopOf="@id/ivProfile" />
+                <TextView android:id="@+id/tvUsername" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginStart="12dp" android:layout_marginTop="2dp"
+                    android:text="User" android:textColor="@color/text_primary" android:textSize="18sp" android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@id/btnLogout" app:layout_constraintStart_toEndOf="@id/ivProfile" app:layout_constraintTop_toBottomOf="@id/tvWelcome" />
+                <TextView android:id="@+id/tvRole" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="12dp" android:layout_marginTop="2dp"
+                    android:background="@drawable/bg_badge" android:paddingStart="8dp" android:paddingTop="2dp" android:paddingEnd="8dp" android:paddingBottom="2dp"
+                    android:text="OWNER" android:textColor="@color/neon_green" android:textSize="10sp" android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/ivProfile" app:layout_constraintTop_toBottomOf="@id/tvUsername" />
+                <ImageButton android:id="@+id/btnLogout" android:layout_width="40dp" android:layout_height="40dp"
+                    android:background="?attr/selectableItemBackgroundBorderless" android:src="@drawable/ic_logout" android:tint="@color/error"
+                    app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </com.google.android.material.appbar.AppBarLayout>
+    <androidx.fragment.app.FragmentContainerView android:id="@+id/navHostFragment" android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="120dp" android:layout_marginBottom="80dp"
+        app:defaultNavHost="true" app:navGraph="@navigation/nav_graph" />
+    <com.google.android.material.bottomnavigation.BottomNavigationView android:id="@+id/bottomNav" android:layout_width="match_parent" android:layout_height="80dp"
+        android:layout_gravity="bottom" android:background="@color/bg_card" app:itemIconTint="@color/bottom_nav_color" app:itemTextColor="@color/bottom_nav_color"
+        app:labelVisibilityMode="labeled" app:menu="@menu/bottom_nav_menu" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

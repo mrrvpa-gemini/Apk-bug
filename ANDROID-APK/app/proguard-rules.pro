@@ -1,0 +1,13 @@
+# Manta'X ProGuard Rules
+-keepattributes *Annotation*
+-keepattributes SourceFile,LineNumberTable
+-keep public class * extends android.app.Activity
+-keep public class * extends android.app.Application
+-keep class retrofit2.** { *; }
+-keepclassmembers,allowobfuscation interface * { @retrofit2.http.* <methods>; }
+-keep class com.manta.whatsapp.models.** { *; }
+-keep class * extends androidx.room.RoomDatabase
+-dontwarn androidx.room.paging.**
+-dontwarn okhttp3.**
+-dontwarn okio.**
+-dontwarn com.whatsapp.**

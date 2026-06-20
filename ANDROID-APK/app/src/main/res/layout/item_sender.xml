@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" style="@style/MantaXCard" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="8dp">
+    <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp">
+        <View android:id="@+id/statusIndicator" android:layout_width="12dp" android:layout_height="12dp" android:background="@drawable/status_online"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+        <TextView android:id="@+id/tvNumber" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginStart="12dp"
+            android:fontFamily="monospace" android:text="+62 812-3456-7890" android:textColor="@color/text_primary" android:textSize="16sp" android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/btnEdit" app:layout_constraintStart_toEndOf="@id/statusIndicator" app:layout_constraintTop_toTopOf="parent" />
+        <TextView android:id="@+id/tvStatus" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="12dp" android:layout_marginTop="4dp"
+            android:text="Online" android:textColor="@color/success" android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@id/statusIndicator" app:layout_constraintTop_toBottomOf="@id/tvNumber" />
+        <TextView android:id="@+id/tvLastActive" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp"
+            android:text="2 menit lalu" android:textColor="@color/text_disabled" android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@id/tvStatus" app:layout_constraintTop_toTopOf="@id/tvStatus" />
+        <ImageButton android:id="@+id/btnEdit" android:layout_width="36dp" android:layout_height="36dp"
+            android:background="?attr/selectableItemBackgroundBorderless" android:src="@drawable/ic_edit" android:tint="@color/colorPrimary"
+            app:layout_constraintEnd_toStartOf="@id/btnDelete" app:layout_constraintTop_toTopOf="parent" />
+        <ImageButton android:id="@+id/btnDelete" android:layout_width="36dp" android:layout_height="36dp"
+            android:background="?attr/selectableItemBackgroundBorderless" android:src="@drawable/ic_delete" android:tint="@color/error"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>
